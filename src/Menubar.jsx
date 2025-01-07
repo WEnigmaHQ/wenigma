@@ -1,36 +1,19 @@
 import {
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
   Box,
-  Container,
+  Stack,
+  Image,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  DownloadIcon,
-  DragHandleIcon,
-  AtSignIcon,
-} from "@chakra-ui/icons";
+
+
 import Voiceover from "./Voiceover.jsx";
-import Heading from "./Heading.jsx";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import Links from "./Links.jsx";
 import Stats from "./Stats.jsx";
-import ShopMenu from "./Lesuire.jsx";
-// import Download from './Download.jsx';
-import Features from "./Features.jsx";
-import Pricing from "./Pricing.jsx";
-import GavelIcon from "@mui/icons-material/Gavel";
+import Reels from "./Reels.jsx";
 import Hotel from "./assets/FKIUIafA-RIY--Lobby.jpg";
-import Licence from "./Licence.jsx";
-import { GoogleLogin } from "@react-oauth/google";
 import { useToast } from "@chakra-ui/react";
-import Changelog from "./Changelog.jsx";
-import Package from "./Package.jsx";
-import Deal_1 from "./Deal_1.jsx";
-import Lesuire from "./Lesuire.jsx";
+import Brands from "./Brands.jsx";
+import Merchandise from "./Merchandise.jsx";
+import Join from "./Join.jsx";
 
 export default function Menubar() {
   const toast = useToast();
@@ -58,113 +41,39 @@ export default function Menubar() {
   };
 
   return (
-    <Tabs>
-      <TabList>
-        <Tab>
-          {" "}
-          <HamburgerIcon></HamburgerIcon>{" "}
-        </Tab>
-        <Tab>
-          {" "}
-          <DragHandleIcon></DragHandleIcon>{" "}
-        </Tab>
-        <Tab>
-          {" "}
-          <DownloadIcon></DownloadIcon>{" "}
-        </Tab>
-        <Tab>
-          {" "}
-          <ShoppingBagIcon></ShoppingBagIcon>{" "}
-        </Tab>
-        <Tab>
-          {" "}
-          <AtSignIcon></AtSignIcon>{" "}
-        </Tab>
-        <Tab>
-          {" "}
-          <GavelIcon></GavelIcon>{" "}
-        </Tab>
-      </TabList>
-
-      <TabPanels>
-        <TabPanel>
+        <Stack>
           <Box
             sx={{
               position: "relative",
               top: "5pc",
-              left: "15pc",
-              width: "25pc",
+              left: "0pc",
+              width: "50pc",
             }}
           >
-            <img src={Hotel}></img>
+            <Image src={Hotel} alt="exclusivness" borderRadius={'100pc'} boxSize={'70pc'}></Image>
           </Box>
           <Box
             sx={{
               position: "relative",
-              left: "-10pc",
-              top: "-5pc",
-              width: "20pc",
-              color: "darkslategrey",
-              fontSize: "xx-large",
+              left: "10pc",
+              top: "15pc",
+              width: "30pc",
+              color: "black",
+              fontSize: "xxx-large",
             }}
           >
-            Connect Life with Lesuire & Luxury
+            Seek exceptional, thrilling moments
           </Box>
-          <Box sx={{ position: "relative", top: "5pc", color: "black" }}>
-            THE TAPESTRY ALLURE THE MAGIC
+          <Box sx={{ position: "relative", top: "10pc", left: "13pc", color: "darkslategrey" }}>
+            ______________ THE TAPESTRY ALLURE THE MAGIC ______________
             <Voiceover></Voiceover>
           </Box>
-          <Box sx={{ position: "relative", top: "68pc", left: "0pc" }}>
-            <Container
-              sx={{
-                fontSize: "xx-large",
-                position: "relative",
-                top: "5pc",
-                color: "darkslategrey",
-                width: "20pc",
-              }}
-            >
-              {" "}
-              Aesthetic Shopping Experience{" "}
-            </Container>
-            <Box
-              sx={{
-                position: "relative",
-                top: "7pc",
-                width: "2pc",
-                left: "10pc",
-              }}
-            >
-              <GoogleLogin
-                onSuccess={onSuccessMessage}
-                onError={onErrorMessage}
-                useOneTap
-              ></GoogleLogin>
-            </Box>
-          </Box>
-          <Heading></Heading>
+          <Reels></Reels>
+          <Brands></Brands>
           <Stats></Stats>
+          <Merchandise></Merchandise>
+          <Join></Join>
           <Links></Links>
-        </TabPanel>
-
-        <TabPanel>
-          <Deal_1></Deal_1>
-        </TabPanel>
-
-        <TabPanel>
-          <Changelog></Changelog>
-          <Package></Package>
-          <Licence></Licence>
-        </TabPanel>
-
-        <TabPanel>
-          <Lesuire></Lesuire>
-        </TabPanel>
-
-        <TabPanel></TabPanel>
-
-        <TabPanel></TabPanel>
-      </TabPanels>
-    </Tabs>
+        </Stack>
   );
 }

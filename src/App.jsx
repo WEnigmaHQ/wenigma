@@ -5,6 +5,7 @@ import { AuthProvider } from "./AuthContext";
 import "./global.css";
 
 function App() {
+
   return (
     <>
       <GoogleOAuthProvider clientId="892995168064-ql1dklpi8qe0sf6q2uauvdmht8pl66th.apps.googleusercontent.com">
