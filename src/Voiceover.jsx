@@ -1,9 +1,9 @@
-import { Box, Button, Image} from "@chakra-ui/react";
+import { Box, Button, IconButton, Image} from "@chakra-ui/react";
 import GraphicEqIcon from '@mui/icons-material/GraphicEq';
-import Messager from "./Messager.jsx";
 import { useEffect, useState } from "react";
-
-
+import { FaHeart } from 'react-icons/fa';
+import Stories  from "./Stories.jsx";
+import Sign from './assets/sign.png';
 
 export default function Voiceover(){
 
@@ -26,7 +26,7 @@ export default function Voiceover(){
     useEffect(()=>{
 
             const synth = window.speechSynthesis
-            const utter = new SpeechSynthesisUtterance('tapestry allure the magic');
+            const utter = new SpeechSynthesisUtterance('Fearless winds call—embrace the rush!');
 
             setutterance(utter);
 
@@ -50,12 +50,11 @@ export default function Voiceover(){
     };
 
     return(
-        <Box boxSize='lg' sx={{position: 'relative', top : '5pc', left : '0pc',  width : '90'}} w={[300, 500]}>
-            <Image src="https://element.io/blog/content/images/2021/08/Voice-Messages-blog.jpg"></Image>
-            <Box sx={{position: 'relative', top : '2pc'}} w={[300, 600]}>
-                <Button onClick={handleClick} sx={{border : 'none', borderRadius: '20', color : 'green', colorScheme: 'teal', title: 'Speak up'}}> <GraphicEqIcon ></GraphicEqIcon> Speak </Button>
-            </Box>
-            {<Messager></Messager>}
+        <Box boxSize='lg' sx={{position: 'relative', top : '20pc', left : '-2pc',  width : '90'}} w={[300, 500]}>
+            <Button onClick={handleClick} sx={{border : 'none', borderRadius: '20', bg: 'red' , color : 'white', colorScheme: 'red', title: 'Speak up', position: 'relative', left : '25pc'}}> <GraphicEqIcon ></GraphicEqIcon> Thhrilll I love it ! </Button>
+            <IconButton icon={<FaHeart></FaHeart>} color={"red"} bg={'transparent'} sx={{position: 'relative', top: '-3pc', left: '17pc'}} aria-label='trilled'> Love </IconButton>
+            <Stories></Stories>
+            <Image src={Sign} alt="Sign" sx={{position: 'relative', top: '5pc', left : '-20pc', transform: "rotate(-45deg)"}}></Image>
         </Box>
     );
 }

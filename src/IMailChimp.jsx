@@ -103,7 +103,7 @@ const CustomForm = ({ status, message, onValidated }) => {
         />
         <Button
           variant="solid"
-          colorScheme="blue"
+          colorScheme="green"
           rightIcon={<MailLockIcon />}
           sx={{ position: "relative", top: "2pc", left: "1pc" }}
           type="submit"
@@ -127,7 +127,7 @@ export default function IMailChimp() {
     <Box sx={{ position: "relative", top: "5pc" }}>
       <Button
         onClick={onOpen}
-        colorScheme="green"
+        colorScheme="teal"
         variant="ghost"
         leftIcon={<MarkunreadMailboxIcon />}
       >

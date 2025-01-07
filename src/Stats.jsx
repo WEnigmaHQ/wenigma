@@ -11,30 +11,34 @@ import {
 export default function Stats(){
 
     return(
-        <StatGroup sx={{position:'relative', top : '14pc', color:'darkslategrey'}} w={[300, 600]}>
+        <StatGroup sx={{position:'relative', top : '100pc', color:'green', bg: 'transparent', fontSize: 'xx-lg', left: '8pc'}} w={[300, 600]}>
             <Stat>
-                <StatLabel> Followers </StatLabel>
-                <StatNumber> 4K </StatNumber>
+                <StatLabel> Brand Partnership </StatLabel>
+                <StatNumber> 20 </StatNumber>
                 <StatHelpText>
                 <StatArrow type='increase' />
-                    23.36%
+                    35%
                 </StatHelpText>
             </Stat>
             <Stat>
-                <StatLabel> Leads </StatLabel>
-                <StatNumber> 200 </StatNumber>
+                <StatLabel> Worth </StatLabel>
+                <StatNumber> Billions </StatNumber>
                 <StatHelpText>
                 <StatArrow type='increase' />
-                    9.05%
+                    24.05%
                 </StatHelpText>
             </Stat>
             <Stat>
-                <StatLabel> Brand's  </StatLabel>
+                <StatLabel> Projects  </StatLabel>
                 <StatNumber> 100+ </StatNumber>
                 <StatHelpText>
                 <StatArrow type='increase' />
-                    0.05%
+                    25.05%
                 </StatHelpText>
+            </Stat>
+            <Stat>
+                <StatLabel> Aesthetic </StatLabel>
+                <StatNumber> 100% </StatNumber>
             </Stat>
         </StatGroup>
     );
