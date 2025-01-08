@@ -1,0 +1,1 @@
+var t=class extends Error{constructor(e,r){super(e||""),typeof r=="object"&&r!==null&&(r.code&&(this.code=String(r.code)),r.expected&&(this.expected=!0),r.transient&&(this.transient=!0),r.cause&&(this.cause=r.cause)),Error.captureStackTrace&&Error.captureStackTrace(this,this.constructor)}};export{t as m};
