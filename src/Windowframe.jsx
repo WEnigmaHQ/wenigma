@@ -76,7 +76,7 @@ export default function Windowframe(){
     return(<>
             <IconButton icon={<Watch></Watch>} variant={'none'} sx={{position: 'relative', top: "-9.5pc", left: "15pc", color:"brown", bg: "transparent"}} onClick={onToggle}></IconButton>
                 <Fade in={isOpen}>
-                    <Box p='40px' color='white' mt='4' bg='yellow.500' rounded='md' shadow='md' sx={{position: 'relative', top: "1pc"}}>
+                    <Box p='40px' color='white' mt='4' bg='yellow.500' rounded='md' shadow='md' sx={{position: 'relative', top: "11pc"}}>
                         <Cartier_Santos_In_Stock></Cartier_Santos_In_Stock>
                         <Panerai_Strap_In_Stock></Panerai_Strap_In_Stock>
                         <Rolex_DateJust_In_Stock></Rolex_DateJust_In_Stock>
