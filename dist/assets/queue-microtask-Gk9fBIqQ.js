@@ -1,0 +1,1 @@
+import{d as i}from"./@babel-C_WqewBV.js";/*! queue-microtask. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */let e;var s=typeof queueMicrotask=="function"?queueMicrotask.bind(typeof window<"u"?window:i):o=>(e||(e=Promise.resolve())).then(o).catch(t=>setTimeout(()=>{throw t},0));export{s as q};
