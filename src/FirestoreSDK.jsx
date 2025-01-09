@@ -13,16 +13,24 @@ let db = false;
 
 export default function getDb(){
 
+  const APIKEY = 'AIzaSyDmS9hqBw690RAzUfxaaTmmFeMY1sD8xxs'
+  const AUTHDOMAIN='wemerchandise-61a94.firebaseapp.com'
+  const PROJECTID='wemerchandise-61a94'
+  const STORAGEBUCKET='wemerchandise-61a94.firebasestorage.app'
+  const MESSENGERSENDERID='554767208381'
+  const APPID='1:554767208381:web:db169f6be959870e8a8cd4'
+  const MEASUREID='G-5QFYS10X6B'
+
     if (!db){
 
         const firebaseConfig = {
-                apiKey: import.meta.env.GOOGLE_FIRESTORE_API,
-                authDomain: import.meta.env.GOOGLE_AUTHDOMAIN,
-                projectId: import.meta.env.GOOGLE_PROJECTID,
-                storageBucket: import.meta.env.GOOGLE_STORAGEBUCKET,
-                messagingSenderId: import.meta.env.MESSAGESENDERID,
-                appId: import.meta.env.APPID,
-                measurementId: import.meta.env.MEASUREMENTID
+                apiKey: APIKEY,
+                authDomain: AUTHDOMAIN,
+                projectId: PROJECTID,
+                storageBucket: STORAGEBUCKET,
+                messagingSenderId: MESSENGERSENDERID,
+                appId: APPID,
+                measurementId: MEASUREID
         };
   
             // Initialize Firebase
