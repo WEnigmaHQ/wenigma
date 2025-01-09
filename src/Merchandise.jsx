@@ -12,7 +12,8 @@ import {
     AspectRatio,
   } from '@chakra-ui/react'
 import { useRef, useState, useEffect } from "react";
-import FacebookLogin from 'react-facebook-login';
+import { EmbeddedPost, FacebookProvider, LoginButton, Page, ShareButton} from "react-facebook";
+// import FacebookLogin from 'react-facebook-login';
 import Breguet from "./assets/Breguet-Classique-Tourbillon.jpg";
 import VintagePen from "./assets/Limited.jpg";
 import { PiGlobeDuotone, PiInvoiceBold } from "react-icons/pi";
@@ -20,7 +21,7 @@ import { TbBeach, TbChess, TbCircleCheck, TbPerfume } from "react-icons/tb";
 import CaronsPoivre from "./assets/CaronsPoivre.jpg";
 import SexyCars from "./assets/apbmt-2022.jpg";
 import { BsDatabaseAdd, BsPersonPlus } from "react-icons/bs";
-import { CardContent } from "@mui/material";
+import { Avatar, CardContent } from "@mui/material";
 import { BiBitcoin, BiCoinStack, BiCrown, BiLike, BiMicrophone, BiPackage } from "react-icons/bi";
 import { FaBitcoin, FaChessBoard, FaChessKing, FaChessQueen, FaMicrophone, FaTruckPickup } from "react-icons/fa";
 import getDb from "./FirestoreSDK";
@@ -43,27 +44,32 @@ function Entice(){
 
     const facebook_login_response = async(response) =>{ console.log('facebbook login response', response);  
         
-        if (response.name === '' && response.email === '' ){ alert('No account connect');}
+        if (response.userID == '' || response.status !== 'connected' ){
+            alert('No account connect'); setVerfied(false);}
+        else{
+            setVerfied(true);}
 
-        try{
+        // try{
 
-            (await getDocs(collection(getDb(), "ExclusiveMembership"))).forEach((doc)=>{
+        //     (await getDocs(collection(getDb(), "ExclusiveMembership"))).forEach((doc)=>{
                 
-                   if ( doc.data().Name.match(response.name) && ( doc.data().level >= 1 || doc.data().Email.match(response.email))){ setDOCID(doc.id); console.log('document reference: ',DOCID); }
-            })
+        //            if ( doc.data().Name.match(response.name) && ( doc.data().level >= 1 || doc.data().Email.match(response.email))){ setDOCID(doc.id); console.log('document reference: ',DOCID); }
+        //     })
         
-        }catch(error){
-            console.log('error', error)
-        }
+        // }catch(error){
+        //     console.log('error', error)
+        // }
 
-        const docRef = doc(getDb(), "ExclusiveMembership",DOCID);
+        // const docRef = doc(getDb(), "ExclusiveMembership",DOCID);
     
-        await updateDoc(docRef, {
+        // await updateDoc(docRef, {
                     
-            profileVerfication: true,
-        })
-        setVerfied(true);
+        //     profileVerfication: true,
+        // })
+        // setVerfied(true);
     }
+
+    const onError = (error) =>{ alert('No Facebook account against your email ')}
     
     const { isOpen, onOpen, onClose } = useDisclosure()
     return(<>
@@ -74,8 +80,16 @@ function Entice(){
                     <ModalHeader sx={{color: 'yellow.600', position: 'relative', left: '30pc', top: '3pc'}}> Entice Pal <Tag color= {'yellow.600'} bg={'transparent'}> 1 </Tag> </ModalHeader>
                     <ModalCloseButton></ModalCloseButton>
                     <ModalBody>
-                        <Box sx={{position: 'relative', top: '15pc', left: '30pc', color: 'darkslategrey.600'}}>
-                            <FacebookLogin appId={'920077980228702'} autoload={true} fields={"name,email,picture"} cssClass="my-facebook-button-class" icon="fa-facebook" callback={facebook_login_response}></FacebookLogin> { verified ? <Text color={'green'} position={'relative'} top={'2pc'} left ={'3pc'} fontSize={'lg'}> 🎉 🎉 🎉 </Text> : <Spinner></Spinner>}
+                        <Box sx={{position: 'relative', top: '15pc', left: '30pc', color: 'white', bg: verified ? 'blue': 'red', width: '10pc', borderRadius: '2pc'}}>
+                           {/* <FacebookLogin appId={'920077980228702'} autoload={true} fields={"name,email,picture"} cssClass="my-facebook-button-class" icon="fa-facebook" callback={facebook_login_response}></FacebookLogin> { verified ? <Text color={'green'} position={'relative'} top={'2pc'} left ={'3pc'} fontSize={'lg'}> 🎉 🎉 🎉 </Text> : <Spinner></Spinner>} */}
+                           <FacebookProvider appId={'920077980228702'}>
+                               <LoginButton scope="email" onSuccess={facebook_login_response} sx={{height: '2pc'}}> {verified ? <Text position={'relative'} top={'1pc'}> ⓕ Connected Facebook </Text> :'ⓕ Connect via Facebook'} </LoginButton>
+                               {verified ? <Box position={'relative'} top={'-10pc'} left={'-10pc'} width={'50pc'} borderRadius={'12pc'} color={'darkslategrey'}>
+                                <Page href="https://www.facebook.com/wisdomenigma" tabs="timeline"></Page>
+                            </Box>: ''}
+                               
+                           </FacebookProvider>
+                           
                         </Box>
                     </ModalBody>
                 </ModalContent>
@@ -1974,7 +1988,7 @@ function Membership() {
     
     return(<>
             <IconButton icon={<CardMembership></CardMembership>} onClick={onOpen} sx={{position: 'relative', top: '6pc', left: '0pc', color: 'yellow.600', bg: 'transparent'}}></IconButton>
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal isOpen={isOpen} onClose={onClose} size={'lg'}>
                 <ModalOverlay></ModalOverlay>
                 <ModalContent>
                     <ModalHeader sx={{color: 'yellow.600'}}> Join Now, Unlock Potential </ModalHeader>
