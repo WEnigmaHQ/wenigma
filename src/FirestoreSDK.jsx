@@ -16,13 +16,13 @@ export default function getDb(){
     if (!db){
 
         const firebaseConfig = {
-                apiKey: "AIzaSyDmS9hqBw690RAzUfxaaTmmFeMY1sD8xxs",
-                authDomain: "wemerchandise-61a94.firebaseapp.com",
-                projectId: "wemerchandise-61a94",
-                storageBucket: "wemerchandise-61a94.firebasestorage.app",
-                messagingSenderId: "554767208381",
-                appId: "1:554767208381:web:db169f6be959870e8a8cd4",
-                measurementId: "G-5QFYS10X6B"
+                apiKey: import.meta.env.GOOGLE_FIRESTORE_API,
+                authDomain: import.meta.env.GOOGLE_AUTHDOMAIN,
+                projectId: import.meta.env.GOOGLE_PROJECTID,
+                storageBucket: import.meta.env.GOOGLE_STORAGEBUCKET,
+                messagingSenderId: import.meta.env.MESSAGESENDERID,
+                appId: import.meta.env.APPID,
+                measurementId: import.meta.env.MEASUREMENTID
         };
   
             // Initialize Firebase
