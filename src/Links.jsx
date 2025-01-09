@@ -17,7 +17,7 @@ export default function Links(){
                 <Link href='https://www.instagram.com/wisdomenigma' isExternal> <InstagramIcon></InstagramIcon> </Link>
                 <Link href='https://www.linkedin.com/company/wisdom-enigma' isExternal> <LinkedInIcon></LinkedInIcon> </Link>
                 <Link href='https://www.youtube.com/channel/UCziNXOl_swLu-SXWWmjFVNA' isExternal> <YouTubeIcon></YouTubeIcon> </Link>
-                <Link href='https://github.com/WisdomEnigma' isExternal> <GitHubIcon></GitHubIcon> </Link>
+                <Link href='https://github.com/WEnigmaHQ' isExternal> <GitHubIcon></GitHubIcon> </Link>
                 <Link href='https://whatsapp.com/channel/0029VaDMshaEawdwVNfg6H2H' isExternal><WhatsAppIcon></WhatsAppIcon></Link>
             </Stack>
             <Box sx={{position: 'relative', top : '0pc', left: '0pc'}} w={[300, 600]}>
