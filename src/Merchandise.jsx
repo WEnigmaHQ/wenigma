@@ -12,8 +12,7 @@ import {
     AspectRatio,
   } from '@chakra-ui/react'
 import { useRef, useState, useEffect } from "react";
-import { EmbeddedPost, FacebookProvider, LoginButton, Page, ShareButton} from "react-facebook";
-// import FacebookLogin from 'react-facebook-login';
+import { FacebookProvider, LoginButton, Page} from "react-facebook";
 import Breguet from "./assets/Breguet-Classique-Tourbillon.jpg";
 import VintagePen from "./assets/Limited.jpg";
 import { PiGlobeDuotone, PiInvoiceBold } from "react-icons/pi";
