@@ -10,13 +10,19 @@
     
 ## Images
 
-![images](https://photos.app.goo.gl/NcbYAzQvtdRNNxK36)
+ ![Service]([image](https://photos.google.com/share/AF1QipPJHYe7ukbIyyACa4abyaaGT9gLMtUeg-KMZlMRjH5JQcEA3h07LqkZqlFQzIuirw?key=WV93ZnRVY3NuTGI1SHhBVkR2THRlS2lYUTV1eE9B))
 
 ## Connect 
 
-!{face}(https://www.facebook.com/wisdomenigma)
+![facebook](https://www.facebook.com/wisdomenigma)
 ![instagram](https://www.instagram.com/wisdomenigma)
 ![linkedinn](https://www.linkedin.com/company/wisdom-enigma/)
+
+
+## History
+
+        V0.00a => Services added
+        V0.01a => Aura membership added
 
     
 
