@@ -10,13 +10,13 @@
     
 ## Images
 
-    ![Screenshot](https://photos.app.goo.gl/NcbYAzQvtdRNNxK36)
+![images](https://photos.app.goo.gl/NcbYAzQvtdRNNxK36)
 
-# Connect 
+## Connect 
 
-    ![facebook](https://www.facebook.com/wisdomenigma)
-    ![instagram](https://www.instagram.com/wisdomenigma)
-    ![linkedinn](https://www.linkedin.com/company/wisdom-enigma/)
+!{face}(https://www.facebook.com/wisdomenigma)
+![instagram](https://www.instagram.com/wisdomenigma)
+![linkedinn](https://www.linkedin.com/company/wisdom-enigma/)
 
     
 
