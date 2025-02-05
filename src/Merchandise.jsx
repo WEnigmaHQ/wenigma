@@ -304,7 +304,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17] </FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -421,7 +421,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17]</FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -547,7 +547,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17] </FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -664,7 +664,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17]</FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -781,7 +781,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17] </FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -911,7 +911,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17]</FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -1027,7 +1027,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17]</FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -1144,7 +1144,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17]</FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -1270,7 +1270,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17]</FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -1386,7 +1386,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17]</FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -1510,7 +1510,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17]</FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -1626,7 +1626,7 @@ function Exclusive(){
                                                 <PopoverBody>
                                                     <form>
                                                         <FormControl>
-                                                            <FormLabel> Growup Members upto 12, 17 </FormLabel>
+                                                            <FormLabel> Any Grown up Age [12, 17]</FormLabel>
                                                             <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
                                                             <NumberInputField />
                                                             <NumberInputStepper>
@@ -1647,6 +1647,121 @@ function Exclusive(){
                                                                     <option> Junior Suite [max 4 person] </option>
                                                                     <option> 2-Raum Suite [max 4 person] </option>
                                                                     <option> Junior Suite IM Gastehaus [max 4 person] </option>
+                                                                </Select>
+                                                            </Stack>
+                                                            <IconButton icon={<Hotel></Hotel>} onClick={onHandle_Reserve} sx={{color: 'yellow.600', bg: 'transparent', position: 'relative', top: '0.2pc', left: '7pc'}}></IconButton>
+                                                            {/* <IconButton icon={<VerifiedUser></VerifiedUser>} onClick={onHandle_EmailQuery_if_exist} sx={{color: verified ? 'green.600' : 'silver', position: 'relative', bg: 'transparent', left: '13pc', top: '-2.5pc'}}></IconButton> */}
+                                                        </FormControl>
+                                                    </form>
+                                                </PopoverBody>
+                                            </PopoverContent>
+                                        </Popover>
+                                    </CardBody>
+                                </CardContent>
+                            </Card>
+                            <Divider></Divider>
+                            <Card>
+                                <CardContent>
+                                    <CardHeader sx={{color: 'yellow.600'}}> <Heading as={'h2'}> Trump Tower </Heading> </CardHeader>
+                                    <CardBody>
+                                        <Text sx={{position: 'relative', top: '1.5pc'}}> ✈︎ Central park west, NY, USA </Text>
+                                        <Tag sx={{position: 'relative', left: '8pc', color: 'yellow.600'}}> 🏂 Luxurious </Tag>
+                                        {/* <Tag sx={{position: 'relative', left: '10pc', color: 'yellow.600'}}> 🐱 Pet Friendly </Tag> */}
+                                        <Text sx={{position: 'relative', left: '20pc', top: '-1.5pc'}}> 📅 14-Feburary-2025 </Text>
+                                        {/* <Text sx={{position: 'relative', left: '50pc', top: '-3pc'}}> 🏎️  Porche Cabrio </Text>  */}
+                                        <Text sx={{position: 'relative', left: '28pc', top: '1pc'}}> Minimum 1 Night Stay </Text> 
+                                        <Tag sx={{position: 'relative', left: '39pc', top: '-0.5pc'}}> Adult / Kids </Tag> 
+                                        <Popover>
+                                            <PopoverTrigger>
+                                                <IconButton icon={<Hotel></Hotel>} sx={{color: 'yellow.600', bg: 'transparent', position: 'relative', top: '-6.5pc', left: '40pc'}}></IconButton>
+                                            </PopoverTrigger>
+                                            <PopoverContent>
+                                                <PopoverHeader> Amenities await for you Only </PopoverHeader>
+                                                <PopoverCloseButton></PopoverCloseButton>
+                                                <PopoverBody>
+                                                    <Tag sx={{position: 'relative', left: '0pc', top: '0pc', color: 'yellow.600'}}> 🍽️ Dining </Tag>
+                                                    <Tag sx={{position: 'relative', left: '1pc', top: '0pc', color: 'yellow.600'}}> 🎂 Event Space </Tag>
+                                                    <Tag sx={{position: 'relative', left: '-3.5pc', top: '1.7pc', color: 'yellow.600'}}> ⛳ Golf </Tag>
+                                                    <Tag sx={{position: 'relative', left: '1.5pc', top: '0.2pc', color: 'yellow.600'}}> 🧖‍♂️ SPA </Tag>
+                                                    <Tag sx={{position: 'relative', left: '7pc', top: '-1.5pc', color: 'yellow.600'}}>  🏨 Room </Tag>
+                                                </PopoverBody>
+                                            </PopoverContent>
+                                        </Popover>
+                                        <Popover>
+                                            <PopoverTrigger>
+                                                <IconButton icon={<FamilyRestroom></FamilyRestroom>} sx={{position: 'relative', left: '40pc', color: 'yellow.600', bg: 'transparent', top: '-11pc'}}></IconButton>
+                                            </PopoverTrigger>
+                                            <PopoverContent>
+                                                <PopoverHeader color={'yellow.600'}> Family Details </PopoverHeader>
+                                                <PopoverCloseButton></PopoverCloseButton>
+                                                <PopoverBody>
+                                                    <form>
+                                                        <FormControl>
+                                                        <FormLabel> Your Email </FormLabel>
+                                                            <Input type="email" placeholder="email" onChange={onHandle_Email}></Input>
+                                                            <IconButton icon={<VerifiedUser></VerifiedUser>} onClick={onHandle_EmailQuery_if_exist} sx={{color: verified ? 'green.600' : 'silver', position: 'relative', bg: 'transparent', left: '16.2pc', top: '-2.5pc'}}></IconButton>
+                                                            {verified && membershipStatus.match('verified') ? <Box>
+                                                                <FormLabel> Adult Members </FormLabel>
+                                                            <NumberInput defaultValue={1} min={1} value={adult} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Adults}>
+                                                            <NumberInputField />
+                                                            <NumberInputStepper>
+                                                                <NumberIncrementStepper />
+                                                                <NumberDecrementStepper />
+                                                            </NumberInputStepper>
+                                                            </NumberInput>
+                                                            <FormLabel> Babies [upto 5 years] </FormLabel>
+                                                            <NumberInput defaultValue={0} min={0} value={babies} focusBorderColor="yellow.600"  max={8} keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Babies}>
+                                                            <NumberInputField />
+                                                            <NumberInputStepper>
+                                                                <NumberIncrementStepper />
+                                                                <NumberDecrementStepper />
+                                                            </NumberInputStepper>
+                                                            </NumberInput>
+                                                            <FormLabel> Child [upto 6, 11 years ] </FormLabel>
+                                                            <NumberInput defaultValue={0} min={0} value={kids} focusBorderColor="yellow.600"  max={8} keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Kids}>
+                                                            <NumberInputField />
+                                                            <NumberInputStepper>
+                                                                <NumberIncrementStepper />
+                                                                <NumberDecrementStepper />
+                                                            </NumberInputStepper>
+                                                            </NumberInput>
+                                                            <IconButton icon={<Hotel></Hotel>} onClick={onHandle_Reserve} sx={{color: 'yellow.600', bg: 'transparent', position: 'relative', top: '0.2pc', left: '7pc'}}></IconButton>
+                                                            </Box> : '' }
+                                                        </FormControl>
+                                                    </form>
+                                                </PopoverBody>
+                                            </PopoverContent>
+                                        </Popover>
+                                        <Popover>
+                                            <PopoverTrigger>
+                                                <IconButton icon={<CalendarMonthOutlined></CalendarMonthOutlined>} sx={{position: 'relative', left: '40pc', color: 'yellow.600', bg: 'transparent', top: '-11pc'}}></IconButton>
+                                            </PopoverTrigger>
+                                            <PopoverContent>
+                                                <PopoverHeader color={'yellow.600'}> Appointment Details </PopoverHeader>
+                                                <PopoverCloseButton></PopoverCloseButton>
+                                                <PopoverBody>
+                                                    <form>
+                                                        <FormControl>
+                                                            <FormLabel> Any Grown up Age [12, 17]</FormLabel>
+                                                            <NumberInput defaultValue={1} min={1} value={growup} focusBorderColor="yellow.600"  max={8}  keepWithinRange={true} clampValueOnBlur={true} onChange={onHandle_Grow}>
+                                                            <NumberInputField />
+                                                            <NumberInputStepper>
+                                                                <NumberIncrementStepper />
+                                                                <NumberDecrementStepper />
+                                                            </NumberInputStepper>
+                                                            </NumberInput>
+                                                            <FormLabel> Arrival Date </FormLabel>
+                                                            <Input type="datetime-local" placeholder="datetime" onChange={onHandle_Arrival_Date}></Input>
+                                                            <FormLabel> Departure Date </FormLabel>
+                                                            <Input type="datetime-local" placeholder="datetime" onChange={onHandle_Departure_Date}></Input>
+                                                            <FormLabel> Restroom </FormLabel>
+                                                            <Stack spacing={2}>
+                                                                <Select variant={'filled'} placeholder="Select " focusBorderColor="yellow.600" onChange={onHandle_Restroom}>
+                                                                    <option> Executive Suites </option>
+                                                                    <option> Junior Suits  </option>
+                                                                    <option> Executive One Bedroom Park View </option>
+                                                                    <option> Executive Two Bedroom Park View </option>
+                                                                    <option> Park View Suite </option>
                                                                 </Select>
                                                             </Stack>
                                                             <IconButton icon={<Hotel></Hotel>} onClick={onHandle_Reserve} sx={{color: 'yellow.600', bg: 'transparent', position: 'relative', top: '0.2pc', left: '7pc'}}></IconButton>
@@ -3934,7 +4049,7 @@ function Spaces() {
                         <CardContent>
                             <CardHeader> <Heading as={'h1'} color={'yellow.600'} width={'30pc'} position={'relative'} left={'10pc'}> Sorry Man ! We can't allure your senses in this category </Heading> </CardHeader>
                         </CardContent>
-                    </Card>
+                </Card>
                 </TabPanel>
             </TabPanels>
             </Tabs>

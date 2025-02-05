@@ -18,9 +18,8 @@ export default function Bitcoinpay(){
                             <AlertDialogContent>
                                 <AlertDialogHeader fontSize={'lg'} fontWeight={'bold'}> Why membership in Bitcoin? </AlertDialogHeader>
                                 <AlertDialogBody>
-                                        Unlock the Future: 500 Members, 50 Bitcoin, Infinite Potential
+                                        Register Now & Earn Exclusiveness
                                     <Image src={QCode} alt="qrcode" sx={{position: 'relative', left: '10pc', top: '2pc'}} width={100} height={100}></Image>
-
                                 </AlertDialogBody>
                                 <AlertDialogFooter>
                                     <IconButton ref={cancelRef} icon={<Cancel></Cancel>} sx={{bg:'black', color: 'red'}}></IconButton>
