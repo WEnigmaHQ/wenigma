@@ -1,20 +1,22 @@
 # wenigma
-Official weigma 
+    
+    Official weigma 
 
 
-    WEnigma website design according to customer get access of information with in few clicks. Information Access is more important before psychological event happen called "BAZAAR".
+    WEnigma is short name of wisdomenigma inc, which offer wide range services for customers included
+    Limited Edition & rare designer & branded watches, perfums, cars & pen's. Wenigma offer dine booking 
+    & business merage & Luxury Landmarks around the world.
 
+    
+## Images
 
-    Open Merchandise Issues 2024
+    ![Screenshot](https://photos.app.goo.gl/NcbYAzQvtdRNNxK36)
 
-                NO MARKETPLACE THAT OPEN DOORS HIGH WORTH COLLECTORS & INVESTORS.
-                TRUSTED, TRANSACTION MEDIUM YOU CHOOSE
-                BRAND's ALLURE THE MAGIC
+# Connect 
 
+    ![facebook](https://www.facebook.com/wisdomenigma)
+    ![instagram](https://www.instagram.com/wisdomenigma)
+    ![linkedinn](https://www.linkedin.com/company/wisdom-enigma/)
 
-    We are offering merchandise service in way you like.
-
-           VINTAGE & LIMITED EDITION MARKETPLACE
-           HIGHWORTH COLLECTORS & INVESTORS
-           EXCHANGE OF TRANSACTION MEDIUM JUST ONE TOUCH AWAY
+    
 
