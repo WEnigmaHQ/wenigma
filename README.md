@@ -10,13 +10,17 @@
     
 ## Images
 
- ![Service]([image](https://photos.google.com/share/AF1QipPJHYe7ukbIyyACa4abyaaGT9gLMtUeg-KMZlMRjH5JQcEA3h07LqkZqlFQzIuirw?key=WV93ZnRVY3NuTGI1SHhBVkR2THRlS2lYUTV1eE9B))
+ ![Service]([text](https://photos.app.goo.gl/NcbYAzQvtdRNNxK36))
 
 ## Connect 
 
-![facebook](https://www.facebook.com/wisdomenigma)
-![instagram](https://www.instagram.com/wisdomenigma)
-![linkedinn](https://www.linkedin.com/company/wisdom-enigma/)
+ ![facebook]([text](https://www.facebook.com/wisdomenigma))
+ 
+ ![instagram]([text](https://www.instagram.com/wisdomenigma))
+ 
+ ![linkedinn]([text](https://www.linkedin.com/company/wisdom-enigma/))
+
+ ![weburl]([text](https://wemerchandise-61a94.web.app/))
 
 
 ## History
