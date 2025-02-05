@@ -25,16 +25,15 @@ export default function Exclusive(){
                 <ModalHeader> Exclusive Membership Benefits </ModalHeader>
                 <ModalCloseButton></ModalCloseButton>
                 <ModalBody>
-
-                    First 500 members will have enjoy exclusive benefits. <br></br>
+                        Exclusive benefits, premium members <br></br>
                     <br></br>
                     1. Business Class trips & tours <br></br>
                     2. Business Network connection <br></br>
                     3. Exclusive Spaces for family & Business <br></br>
-                    4. Access to Limited Edition or Vintage Collections <br></br>
+                    4. Access to Limited Edition Collections <br></br>
                     5. Exclusive Investments Deals <br></br>
-                    6. Consigliere Prenium Services <br></br>
-                    7. Royal Brueni Airlines Membership  <br></br>
+                    6. Exclusive Incognito Services [Private Life] <br></br>
+                    7. Aura Membership [Private Members]  <br></br>
                 </ModalBody>
                 <ModalFooter>
                     <Bitcoinpay></Bitcoinpay>
