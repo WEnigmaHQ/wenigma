@@ -1,4 +1,4 @@
-import { Box, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure, Image, Text, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Table, Thead, Tr, Th, Tbody, Td, useToast, Fade, FormControl, FormLabel, Input, Stack, Select, FormHelperText, Heading } from "@chakra-ui/react"
+import { Box, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure, Image, Text, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Table, Thead, Tr, Th, Tbody, Td, useToast, Fade, FormControl, FormLabel, Input, Stack, Select, FormHelperText, Heading, TabList, Tabs, Tab, TabPanels, TabPanel } from "@chakra-ui/react"
 import { Email, LocationSearching, Timer, VerifiedUser, Watch} from "@mui/icons-material";
 import { useRef, useState } from "react";
 import { PiGavel } from "react-icons/pi";
@@ -72,36 +72,60 @@ import { collection, getDocs,doc, updateDoc } from "firebase/firestore";
 
 export default function Windowframe(){
 
-    const { isOpen, onToggle } = useDisclosure();
+    const {isOpen, onOpen, onClose} = useDisclosure();
+
     return(<>
-            <IconButton icon={<Watch></Watch>} variant={'none'} sx={{position: 'relative', top: "-9.5pc", left: "15pc", color:"brown", bg: "transparent"}} onClick={onToggle}></IconButton>
-                <Fade in={isOpen}>
-                    <Box p='40px' color='white' mt='4' bg='yellow.500' rounded='md' shadow='md' sx={{position: 'relative', top: "11pc"}}>
-                        <Cartier_Santos_In_Stock></Cartier_Santos_In_Stock>
-                        <Panerai_Strap_In_Stock></Panerai_Strap_In_Stock>
-                        <Rolex_DateJust_In_Stock></Rolex_DateJust_In_Stock>
-                        <Omega_In_Stock></Omega_In_Stock>
-                        <Text sx={{fontFamily: 'La Belle Aurore', position: 'relative', top: '-60pc', fontSize: 'xxx-large', font: 'bold', left: '60pc'}}>  Se &#129397; y    </Text>
-                        <Geneve_Square_14k_Gold_Lady_In_Stock></Geneve_Square_14k_Gold_Lady_In_Stock>
-                        <Heuer_Strap_In_Stock></Heuer_Strap_In_Stock>
-                        <Cartier_Santos_Diamonds_In_Stock></Cartier_Santos_Diamonds_In_Stock>
-                        <AP_Oak_In_Stock></AP_Oak_In_Stock>
-                        <Text sx={{fontFamily: 'La Belle Aurore', position: 'relative', top: '-100pc', fontSize: 'xxx-large', font: 'bold', left: '5pc'}}> Be Rebels    </Text>
-                        <Patek_Philipe_R_In_Stock></Patek_Philipe_R_In_Stock>
-                        <Patek_Philipe_A_In_Stock></Patek_Philipe_A_In_Stock>
-                        <BNIB_AP_Oak_In_Stock></BNIB_AP_Oak_In_Stock>
-                        <AP_Oak_OffShore_In_Stock></AP_Oak_OffShore_In_Stock>
-                        <Text sx={{fontFamily: 'La Belle Aurore', position: 'relative', top: '-155pc', fontSize: 'xxx-large', font: 'bold', left: '54pc'}}> Emperor  </Text>
-                        <Rolex_DateJust_Diamonds_A_In_Stock></Rolex_DateJust_Diamonds_A_In_Stock>
-                        <Cartier_Santos_Diamond_Crown_In_Stock></Cartier_Santos_Diamond_Crown_In_Stock>
-                        <Audemars_Piguet_white_Oak_In_Stock></Audemars_Piguet_white_Oak_In_Stock>
-                        <Panerai_Pa_Luminor_Marina_In_Stock></Panerai_Pa_Luminor_Marina_In_Stock>
-                        <Text sx={{fontFamily: 'La Belle Aurore', position: 'relative', top: '-210pc', fontSize: 'xxx-large', font: 'bold', left: '10pc'}}> Warrior  </Text>
-                        <Cartier_Pasha_Seatimer_In_Stock></Cartier_Pasha_Seatimer_In_Stock>
-                        <Members_Addons></Members_Addons>
-                        <House_Of_Exclusivity></House_Of_Exclusivity>
-                     </Box>
-            </Fade>
+            <IconButton icon={<Watch></Watch>} variant={'none'} sx={{position: 'relative', top: "-9.5pc", left: "15pc", color:"brown", bg: "transparent"}} onClick={onOpen}></IconButton>
+            <Modal isOpen={isOpen} onClose={onClose} size={'full'}>
+                <ModalOverlay></ModalOverlay>
+                <ModalContent>
+                    <ModalCloseButton></ModalCloseButton>
+                    <ModalBody>
+                        <Tabs>
+                            <TabList>
+                                <Tab> Watch Straps </Tab>
+                                <Tab> Simple </Tab>
+                                <Tab> Diamond </Tab>
+                                <Tab> Rare </Tab>
+                                <Tab> Collectors </Tab>
+                                <Tab> Events </Tab>
+                            </TabList>
+                            <TabPanels>
+                                <TabPanel>
+                                    <Panerai_Strap_In_Stock></Panerai_Strap_In_Stock>
+                                    <Heuer_Strap_In_Stock></Heuer_Strap_In_Stock>
+                                </TabPanel>
+                                <TabPanel>
+                                    <Omega_In_Stock></Omega_In_Stock>
+                                    <Rolex_DateJust_In_Stock></Rolex_DateJust_In_Stock>
+                                    <Cartier_Santos_In_Stock></Cartier_Santos_In_Stock>
+                                    <AP_Oak_In_Stock></AP_Oak_In_Stock>
+                                </TabPanel>
+                                <TabPanel>
+                                    <Cartier_Santos_Diamonds_In_Stock></Cartier_Santos_Diamonds_In_Stock>
+                                    <Rolex_DateJust_Diamonds_A_In_Stock></Rolex_DateJust_Diamonds_A_In_Stock>
+                                    <Cartier_Santos_Diamond_Crown_In_Stock></Cartier_Santos_Diamond_Crown_In_Stock>
+                                </TabPanel>
+                                <TabPanel>
+                                    <Panerai_Pa_Luminor_Marina_In_Stock></Panerai_Pa_Luminor_Marina_In_Stock>
+                                    <Geneve_Square_14k_Gold_Lady_In_Stock></Geneve_Square_14k_Gold_Lady_In_Stock>
+                                </TabPanel>
+                                <TabPanel>
+                                    <AP_Oak_OffShore_In_Stock></AP_Oak_OffShore_In_Stock>
+                                    <BNIB_AP_Oak_In_Stock></BNIB_AP_Oak_In_Stock>
+                                    <Patek_Philipe_R_In_Stock></Patek_Philipe_R_In_Stock>
+                                    <Patek_Philipe_A_In_Stock></Patek_Philipe_A_In_Stock>
+                                    <Audemars_Piguet_white_Oak_In_Stock></Audemars_Piguet_white_Oak_In_Stock>
+                                </TabPanel>
+                                <TabPanel>
+                                    <Members_Addons></Members_Addons>
+                                    <House_Of_Exclusivity></House_Of_Exclusivity>
+                                </TabPanel>
+                            </TabPanels>
+                        </Tabs>
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
         </>);
 }
 
@@ -110,14 +134,15 @@ function Members_Addons(){
     const toast = useToast()
 
     return(<>
-        <IconButton icon={<Watch></Watch>} position={'relative'} top={'-220pc'} left={'30pc'} color={'blue'} bg={'transparent'} 
+        <IconButton icon={<Watch></Watch>} position={'relative'} top={'15pc'} left={'5pc'} color={'blue'} bg={'transparent'} 
         onClick={() =>toast({
           title: 'Exchange your memories',
-          description: "Excellent You have share details about your masterpiece, through email. Have a great day",
+          description: "Excellent Send us watch quota @ wizdwarfs@gmail.com",
           status: 'success',
           duration: 9000,
           isClosable: true,
         })}></IconButton>
+        <Text position={'relative'} top={'12.5pc'} left={'15pc'} fontSize={'25'}> Quota </Text>
         
     </>)
 }
@@ -174,7 +199,8 @@ function House_Of_Exclusivity(){
 
 
     return(<>
-        <IconButton onClick={onOpen} icon={<PiGavel></PiGavel>} position={'relative'} top={'-220pc'} left={'50pc'} color={'blue'} bg={'transparent'}></IconButton>
+        <IconButton onClick={onOpen} icon={<PiGavel></PiGavel>} position={'relative'} top={'10pc'} left={'40pc'} size={'lg'} color={'purple'} bg={'transparent'}></IconButton>
+        <Text position={'relative'} top={'7.5pc'} left={'45pc'} fontSize={'25'}> Auction </Text>
         <Modal isOpen={isOpen} onClose={onClose} size={'lg'}>
         <ModalOverlay />
         <ModalContent>
@@ -212,7 +238,7 @@ function House_Of_Exclusivity(){
             </form>
           </ModalBody>
         </ModalContent>
-      </Modal>
+        </Modal>
     </>)
 }
 
@@ -233,10 +259,10 @@ function Cartier_Santos_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Cartier Santos XL 100 Automatic for Mens" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', left : '5pc', top: '10pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '1.8pc', height: '8pc', top: "1pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '12pc', height: '8pc', top: "1pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '2pc', left: '5pc', width: '10pc'}}> Cartier Santos XL 100 Automatic </Text>
+                    <Image src={images[currentIndex]} alt="Cartier Santos XL 100 Automatic for Mens" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', left : '65pc', top: '-41pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '62pc', height: '8pc', top: "-50.5pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '72pc', height: '8pc', top: "-50.5pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-49pc', left: '65pc', width: '10pc'}}> Cartier Santos XL 100 Automatic </Text>
                     <CartierDetails></CartierDetails>
             </>);
 }
@@ -248,7 +274,7 @@ function CartierDetails(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-4pc', left: '10pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-54pc', left: '68pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -373,10 +399,10 @@ function Panerai_Strap_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Panerai Strap black Ortish Leather" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-13pc', left: '30pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '27pc', height: '8pc', top: "-21.9pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '37.5pc', height: '8pc', top: "-21.9pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-21pc', left: '32.5pc', width: '10pc'}}>PANERAI SUBMERSIBLE STRAPS - OSTRICH LEG BLACK </Text>
+                    <Image src={images[currentIndex]} alt="Panerai Strap black Ortish Leather" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '5pc', left: '5pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '0pc', height: '8pc', top: "-5pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '15pc', height: '8pc', top: "-5pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-2pc', left: '8pc', width: '10pc'}}>PANERAI SUBMERSIBLE STRAPS - OSTRICH LEG BLACK </Text>
                     <Panerai_Strap_Details></Panerai_Strap_Details>
             </>);
 }
@@ -388,7 +414,7 @@ function Panerai_Strap_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-29pc', left: '33pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-12pc', left: '9pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -489,10 +515,10 @@ function Rolex_DateJust_In_Stock(){
     }
     return(<>
             
-                    <Image src={rolex_images[currentIndex]} alt="Rolex DateJust Timepiece" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-39pc', left: '55pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '51.5pc', height: '8pc', top: "-47.9pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '62.5pc', height: '8pc', top: "-47.9pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-47pc', left: '56pc', width: '10pc'}}> Rolex DateJust  </Text>
+                    <Image src={rolex_images[currentIndex]} alt="Rolex DateJust Timepiece" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-20pc', left: '40pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '37pc', height: '8pc', top: "-29pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '47pc', height: '8pc', top: "-29pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-28pc', left: '41pc', width: '10pc'}}> Rolex DateJust  </Text>
                     <Rolex_DateJust_Details></Rolex_DateJust_Details>
             </>);
 }
@@ -504,7 +530,7 @@ function Rolex_DateJust_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-51pc', left: '58pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-32pc', left: '43pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -633,10 +659,10 @@ function Omega_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Omega Speedmaster Professional" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-40pc', left: '28pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '24pc', height: '8pc', top: "-49.2pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '36pc', height: '8pc', top: "-49.2pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-47pc', left: '29pc', width: '10pc'}}> Omega Speedmaster Professional  </Text>
+                    <Image src={images[currentIndex]} alt="Omega Speedmaster Professional" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '2pc', left: '5pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '2pc', height: '8pc', top: "-7pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '12pc', height: '8pc', top: "-7pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-5pc', left: '6pc', width: '10pc'}}> Omega Speedmaster Professional  </Text>
                     <Omega_Speedmaster_Professional_Details></Omega_Speedmaster_Professional_Details>
             </>);
 }
@@ -648,7 +674,7 @@ function Omega_Speedmaster_Professional_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-54pc', left: '30pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-12pc', left: '8pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -773,10 +799,10 @@ function Geneve_Square_14k_Gold_Lady_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt=" Geneve Square 14k Gold" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-45pc', left: '5pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '2pc', height: '8pc', top: "-54.2pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '12pc', height: '8pc', top: "-54.2pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-53pc', left: '5pc', width: '10pc'}}> Geneve Square 14k Gold Lady  </Text>
+                    <Image src={images[currentIndex]} alt=" Geneve Square 14k Gold" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-18.5pc', left: '40pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '37pc', height: '8pc', top: "-27pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '48pc', height: '8pc', top: "-27pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-26.5pc', left: '40pc', width: '10pc'}}> Geneve Square 14k Gold Lady  </Text>
                     <Geneve_Quatz_14K_Gold_Details></Geneve_Quatz_14K_Gold_Details>
             </>);
 }
@@ -788,7 +814,7 @@ function Geneve_Quatz_14K_Gold_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-59pc', left: '6pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-32pc', left: '42pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -913,10 +939,10 @@ function Heuer_Strap_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Heuer Corfam Strap" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-67.5pc', left: '30pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '27pc', height: '8pc', top: "-77.2pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '37.5pc', height: '8pc', top: "-77.2pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-75.5pc', left: '30pc', width: '10pc'}}> Heuer Corfam Strap BLACK Printed Calendar </Text>
+                    <Image src={images[currentIndex]} alt="Heuer Corfam Strap" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-21pc', left: '40pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '36pc', height: '8pc', top: "-30pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '47pc', height: '8pc', top: "-30pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-28.5pc', left: '40pc', width: '10pc'}}> Heuer Corfam Strap BLACK Printed Calendar </Text>
                     <Heuer_Strap_Details></Heuer_Strap_Details>
             </>);
 }
@@ -928,7 +954,7 @@ function Heuer_Strap_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-84.3pc', left: '33pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-36pc', left: '43pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -1030,10 +1056,10 @@ function Cartier_Santos_Diamonds_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Cartier Santos Diamonds" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-92pc', left: '54pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '50pc', height: '8pc', top: "-101.5pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '62pc', height: '8pc', top: "-101.5pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-100pc', left: '56pc', width: '10pc'}}> Cartier Santos Diamond  </Text>
+                    <Image src={images[currentIndex]} alt="Cartier Santos Diamonds" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '5pc', left: '5pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '2pc', height: '8pc', top: "-3pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '12pc', height: '8pc', top: "-3pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-3pc', left: '7pc', width: '10pc'}}> Cartier Santos Diamond  </Text>
                     <Cartier_Santos_Diamonds_Details></Cartier_Santos_Diamonds_Details>
             </>);
 }
@@ -1045,7 +1071,7 @@ function Cartier_Santos_Diamonds_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-105pc', left: '57pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-9pc', left: '8pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -1166,10 +1192,10 @@ function AP_Oak_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Audemars Piguet" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-94.5pc', left: '30pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '27pc', height: '8pc', top: "-104pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '37pc', height: '8pc', top: "-104pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-102.5pc', left: '31pc', width: '10pc'}}> Audemars Piguet Royal Oak  Chronograph Limited Edition 500   </Text>
+                    <Image src={images[currentIndex]} alt="Audemars Piguet" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-45pc', left: '5pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '4pc', height: '8pc', top: "-55pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '12pc', height: '8pc', top: "-55pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-60pc', left: '19pc', width: '10pc'}}> Audemars Piguet Royal Oak  Chronograph Limited Edition 500   </Text>
                     <Audemars_Piguet_500_Details></Audemars_Piguet_500_Details>
             </>);
 }
@@ -1181,7 +1207,7 @@ function Audemars_Piguet_500_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-112pc', left: '36pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-63pc', left: '14.5pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -1306,10 +1332,10 @@ function Patek_Philipe_R_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Patek Philipe" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-90pc', left: '5pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '1pc', height: '8pc', top: "-98.5pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '13pc', height: '8pc', top: "-98.5pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-98pc', left: '6pc', width: '10pc'}}> Patek Philippe Aquanaut Rose  </Text>
+                    <Image src={images[currentIndex]} alt="Patek Philipe" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-45pc', left: '60pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '57pc', height: '8pc', top: "-53pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '67pc', height: '8pc', top: "-53pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-53pc', left: '61pc', width: '10pc'}}> Patek Philippe Aquanaut Rose  </Text>
                     <Patek_Philipe_R_Details></Patek_Philipe_R_Details>
             </>);
 }
@@ -1321,7 +1347,7 @@ function Patek_Philipe_R_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-106pc', left: '6pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-60pc', left: '62pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -1466,10 +1492,10 @@ function Patek_Philipe_A_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Patek Philipe" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-112pc', left: '30pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '27pc', height: '8pc', top: "-121pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '37pc', height: '8pc', top: "-121pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-120pc', left: '31pc', width: '10pc'}}> Patek Philippe Aquanaut Blue  </Text>
+                    <Image src={images[currentIndex]} alt="Patek Philipe" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-53pc', left: '5pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '2pc', height: '8pc', top: "-61pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '12pc', height: '8pc', top: "-61pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-61pc', left: '6pc', width: '10pc'}}> Patek Philippe Aquanaut Blue  </Text>
                     <Patek_Philipe_A_Details></Patek_Philipe_A_Details>
             </>);
 }
@@ -1481,7 +1507,7 @@ function Patek_Philipe_A_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-127pc', left: '36pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-67pc', left: '8pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -1626,10 +1652,10 @@ function BNIB_AP_Oak_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Audemars Piguet" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-135pc', left: '52pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '48pc', height: '8pc', top: "-144pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '60pc', height: '8pc', top: "-144pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-143pc', left: '53pc', width: '10pc'}}> BINP Audemars Piguet Royal Oak Selfwiding Chronograph   </Text>
+                    <Image src={images[currentIndex]} alt="Audemars Piguet" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-19pc', left: '40pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '37pc', height: '8pc', top: "-27pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '48pc', height: '8pc', top: "-27pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-27pc', left: '42pc', width: '10pc'}}> BINP Audemars Piguet Royal Oak Selfwiding Chronograph   </Text>
                     <BINP_AP_Details></BINP_AP_Details>
             </>);
 }
@@ -1641,7 +1667,7 @@ function BINP_AP_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-152pc', left: '58pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-36pc', left: '43pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -1782,10 +1808,10 @@ function AP_Oak_OffShore_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Audemars Piguet" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-140pc', left: '30pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '27pc', height: '8pc', top: "-149pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '37pc', height: '8pc', top: "-149pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-148pc', left: '31pc', width: '10pc'}}> Audemars Piguet Royal Oak Offshore Diver </Text>
+                    <Image src={images[currentIndex]} alt="Audemars Piguet" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '5pc', left: '5pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '2pc', height: '8pc', top: "-3pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '12pc', height: '8pc', top: "-3pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-3pc', left: '6pc', width: '10pc'}}> Audemars Piguet Royal Oak Offshore Diver </Text>
                     <AP_Offshore_Details></AP_Offshore_Details>
             </>);
 }
@@ -1797,7 +1823,7 @@ function AP_Offshore_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-155pc', left: '33pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-10pc', left: '8pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -1955,10 +1981,10 @@ function Rolex_DateJust_Diamonds_A_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Rolex DateJust" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-150pc', left: '5pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '1pc', height: '8pc', top: "-159pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '13pc', height: '8pc', top: "-159pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-158pc', left: '6pc', width: '10pc'}}> Rolex Datejust 36 Mother of Pearl  </Text>
+                    <Image src={images[currentIndex]} alt="Rolex DateJust" width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-17.5pc', left: '40pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '37pc', height: '8pc', top: "-26pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '48pc', height: '8pc', top: "-26pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-25.5pc', left: '41pc', width: '10pc'}}> Rolex Datejust 36 Mother of Pearl  </Text>
                     <Rolex_DateJust_Diamonds_Details></Rolex_DateJust_Diamonds_Details>
             </>);
 }
@@ -1969,7 +1995,7 @@ function Rolex_DateJust_Diamonds_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-163pc', left: '8pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-31pc', left: '43pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -2114,10 +2140,10 @@ function Cartier_Santos_Diamond_Crown_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Cartier Santos " width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-173pc', left: '30pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '27pc', height: '8pc', top: "-182pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '37pc', height: '8pc', top: "-182pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-181pc', left: '31pc', width: '10pc'}}> Cartier Santos 100  </Text>
+                    <Image src={images[currentIndex]} alt="Cartier Santos " width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-40pc', left: '65pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '61pc', height: '8pc', top: "-49pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '72pc', height: '8pc', top: "-49pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-48pc', left: '66pc', width: '10pc'}}> Cartier Santos 100  </Text>
                     <Cartier_Santos_Gemstone_Details></Cartier_Santos_Gemstone_Details>
             </>);
 }
@@ -2129,7 +2155,7 @@ function Cartier_Santos_Gemstone_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-185pc', left: '33pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-53pc', left: '68pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -2258,10 +2284,10 @@ function Audemars_Piguet_white_Oak_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Audemars Piguet Royal Oak Chorograph [white] " width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-194pc', left: '52pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '47pc', height: '8pc', top: "-203.5pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '60pc', height: '8pc', top: "-203.5pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-202pc', left: '52.5pc', width: '10pc'}}> Audemars Piguet Royal Oak Offshore Chornograph [White]  </Text>
+                    <Image src={images[currentIndex]} alt="Audemars Piguet Royal Oak Chorograph [white] " width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-75pc', left: '40pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '37pc', height: '8pc', top: "-84pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '47pc', height: '8pc', top: "-84pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-83pc', left: '42pc', width: '10pc'}}> Audemars Piguet Royal Oak Offshore Chornograph [White]  </Text>
                     <Aduemars_Piguet_Oak_White_Details></Aduemars_Piguet_Oak_White_Details>
             </>)
 }
@@ -2273,7 +2299,7 @@ function Aduemars_Piguet_Oak_White_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-209pc', left: '56pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-92pc', left: '43pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>
@@ -2410,10 +2436,10 @@ function Panerai_Pa_Luminor_Marina_In_Stock(){
     }
     return(<>
             
-                    <Image src={images[currentIndex]} alt="Panerai Luminor Marina Automatic Firenze 1890 " width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '-200pc', left: '30pc'}}></Image>
-                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '27pc', height: '8pc', top: "-209pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '37pc', height: '8pc', top: "-209pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
-                    <Text sx={{ position: 'relative', top: '-208pc', left: '31pc', width: '10pc'}}> Panerai Luminor Marina Automatic Firenze 1890  </Text>
+                    <Image src={images[currentIndex]} alt="Panerai Luminor Marina Automatic Firenze 1890 " width={150} height={150} sx={{borderRadius: "20pc", position: 'relative', top: '5pc', left: '5pc'}}></Image>
+                    <IconButton icon={<BsNodePlus></BsNodePlus>} onClick={plus} sx={{position: 'relative', left: '2pc', height: '8pc', top: "-3pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <IconButton icon={<BsNodeMinus></BsNodeMinus>} onClick={minus} sx={{position: 'relative', left: '12pc', height: '8pc', top: "-3pc", bg: "transparent", color: "black", fontSize: 'large'}}></IconButton>
+                    <Text sx={{ position: 'relative', top: '-3pc', left: '6pc', width: '10pc'}}> Panerai Luminor Marina Automatic Firenze 1890  </Text>
                     <Panerai_Luminor_Marina_1890_Details></Panerai_Luminor_Marina_1890_Details>
             </>)
 }
@@ -2425,7 +2451,7 @@ function Panerai_Luminor_Marina_1890_Details(){
     const TimerToast = useToast();
 
     
-    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'black', position: 'relative', top: '-215pc', left: '33pc'}}></IconButton>
+    return(<> <IconButton icon={<BsCartPlus></BsCartPlus>} ref={buttonRef} onClick={onOpen} sx={{bg: 'transparent' ,color: 'white', position: 'relative', top: '-10pc', left: '8pc'}}></IconButton>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={buttonRef}>
             <DrawerOverlay>
                 <DrawerContent>

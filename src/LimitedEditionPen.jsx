@@ -19,15 +19,20 @@ import * as  EmailValidator  from 'email-validator';
 
 export default function LimitedEditionPen(){
 
-    const { isOpen, onToggle } = useDisclosure();
+    const {isOpen, onOpen, onClose} = useDisclosure();
 
     return(<> 
-            <IconButton icon={<PiPen></PiPen>} variant={'none'} sx={{position: 'relative', top: "-436.9pc", left: "25pc", color:"darkslategrey", bg: "transparent"}} onClick={onToggle}></IconButton>
-            <Fade in={isOpen}>
-                    <Box p='10px' color='white' mt='4' bg='red.500' rounded='md' shadow='md' sx={{position: 'relative', top: '-420pc', height: 'auto', borderRadius: '2pc'}}>
-                        <Create_Contract></Create_Contract>
-                    </Box>
-            </Fade>
+            <IconButton icon={<PiPen></PiPen>} variant={'none'} sx={{position: 'relative', top: "-9.5pc", left: "18pc", color:"darkslategrey", bg: "transparent"}} onClick={onOpen}></IconButton>
+            <Modal isOpen={isOpen} onClose={onClose} size={'lg'} height={'50pc'}>
+                <ModalOverlay></ModalOverlay>
+                <ModalContent>
+                    <ModalHeader color={'yellow.600'}> Limited Edition Pens </ModalHeader>
+                    <ModalCloseButton></ModalCloseButton>
+                    <ModalBody>
+                                <Create_Contract></Create_Contract>
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
            </>);
 }
 
@@ -321,7 +326,7 @@ function Create_Contract(){
     }
 
     return (<> 
-            <IconButton icon={<BiPlusCircle></BiPlusCircle>} sx={{position: 'relative', left: '64pc' , bg: 'transparent', color: 'white', top: '4pc'}} onClick={onOpen}></IconButton> <Text position={'relative'} top={'2pc'} left={'35pc'}> Your Pen, Your Story: Submit for a Chance to Shine!  </Text>
+            <IconButton icon={<BiPlusCircle></BiPlusCircle>} sx={{position: 'relative', left: '2pc' , bg: 'transparent', color: 'green.600', top: '6.8pc'}} onClick={onOpen}></IconButton> <Text position={'relative'} top={'5pc'} left={'5pc'}> Your Pen, Your Story: Submit for a Chance to Shine!  </Text>
             <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay></ModalOverlay>
                 <ModalContent>
@@ -926,7 +931,7 @@ function Marketplace_LEP_Window(){
     }, [])
 
     return(<> 
-        <IconButton icon={<Shop2></Shop2>} onClick={onOpen} sx={{position: 'relative', left: '35pc', top: '2pc' , bg: 'transparent', color: 'white'}} ></IconButton> <Text sx={{position: 'relative', left: '10pc', top: '0pc'}}> Marketplace Magic: Uncover Unique Treasures! </Text> 
+        <IconButton icon={<Shop2></Shop2>} onClick={onOpen} sx={{position: 'relative', left: '1.5pc', top: '2pc' , bg: 'transparent', color: 'green.600'}} ></IconButton> <Text sx={{position: 'relative', left: '5pc', top: '0pc'}}> Marketplace Magic: Uncover Unique Treasures! </Text> 
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay></ModalOverlay>
             <ModalContent>
@@ -1118,8 +1123,8 @@ function Auctions_Window(){
     }
 
     return(<> 
-          <IconButton onClick={onOpen} icon={<GavelRounded></GavelRounded>} sx={{position: 'relative', left: '64pc', top: '-2.2pc' , bg: 'transparent', color: 'white'}} ></IconButton>
-          <Text sx={{position: 'relative', left: '45pc', top: '-4pc'}}> Bid Boldly: Your Treasure Awaits!  </Text> 
+          <IconButton onClick={onOpen} icon={<GavelRounded></GavelRounded>} sx={{position: 'relative', left: '2pc', top: '0.5pc' , bg: 'transparent', color: 'green.600'}} ></IconButton>
+          <Text sx={{position: 'relative', left: '5pc', top: '-1pc'}}> Bid Boldly: Your Treasure Awaits!  </Text> 
           <Modal isOpen={isOpen} onClose={onClose} size={'lg'}>
         <ModalOverlay />
         <ModalContent>
@@ -1506,7 +1511,7 @@ function Review_LEP_Window(){
     }
 
 
-    return(<> <IconButton onClick={onOpen} icon={<ReviewsTwoTone></ReviewsTwoTone>} sx={{position: 'relative', left: '25pc' , bg: 'transparent', color: 'white', top: '0pc'}} ></IconButton> <Text sx={{position: 'relative', left: '10pc', top: '-2pc'}}> Track It, Know Where It Is! </Text>
+    return(<> <IconButton onClick={onOpen} icon={<ReviewsTwoTone></ReviewsTwoTone>} sx={{position: 'relative', left: '18pc' , bg: 'transparent', color: 'green.600', top: '0pc'}} ></IconButton> <Text sx={{position: 'relative', left: '5pc', top: '-2pc'}}> Track It, Know Where It Is! </Text>
               <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay></ModalOverlay>
                 <ModalContent>

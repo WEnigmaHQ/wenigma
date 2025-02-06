@@ -13,18 +13,27 @@ import { VerifiedUser, CarRental } from "@mui/icons-material";
 import getDb from "./FirestoreSDK";
 import { addDoc, collection, getDocs,doc, updateDoc } from "firebase/firestore";
 import { BsDatabaseAdd, BsDatabaseFillAdd } from "react-icons/bs";
+
+
 export default function Cars(){
 
-    const { isOpen, onToggle } = useDisclosure();
+    const {isOpen, onOpen, onClose} = useDisclosure();
 
     return(<>
-        <IconButton icon={<CarRental></CarRental>} onClick={onToggle} variant={'none'} sx={{position: 'relative', top: "-475.5pc", left: "35pc", color:"black", bg: "transparent"}}></IconButton>
-        <Fade in={isOpen}>
-                    <Box p='40px' color='white' mt='4' bg='teal.500' rounded='md' shadow='md' sx={{position: 'relative', top: '-468pc', height: 'auto', borderRadius: '2pc'}}>
-                        <Add_Bad_Boys></Add_Bad_Boys>
-                        <Checkout></Checkout>
-                    </Box>
-        </Fade>
+        <IconButton icon={<CarRental></CarRental>} variant={'none'} onClick={onOpen} sx={{position: 'relative', top: "-9.5pc", left: "24pc", color:"black", bg: "transparent"}}></IconButton>
+        <Modal isOpen={isOpen} onClose={onClose} size={'lg'} height={'50pc'}>
+            <ModalOverlay></ModalOverlay>
+            <ModalContent>
+                <ModalHeader color={'yellow.600'}>
+                   Limited Edition Luxury Cars
+                </ModalHeader>
+                <ModalCloseButton></ModalCloseButton>
+                <ModalBody>
+                            <Add_Bad_Boys></Add_Bad_Boys>
+                            <Checkout></Checkout>
+                </ModalBody>
+            </ModalContent>
+        </Modal>
     </>)
 }
 
@@ -135,8 +144,8 @@ function Add_Bad_Boys(){
     
 
     return(<>
-        <IconButton icon={<CarRental></CarRental>} onClick={onOpen} position={'relative'} left={'20pc'} bg={'transparent'} color={'white'}></IconButton>
-        <Text position={'relative'} left={'25pc'} top={'-1.8pc'}> "Unleash Your Inner Bad Boy."</Text>
+        <IconButton icon={<CarRental></CarRental>} onClick={onOpen} position={'relative'} left={'20pc'} bg={'transparent'} color={'yellow.600'}></IconButton>
+        <Text position={'relative'} left={'5pc'} top={'-1.8pc'}> "Unleash Your Inner Bad Boy."</Text>
         <Modal isOpen={isOpen} onClose={onClose} size={'lg'}>
             <ModalOverlay></ModalOverlay>
             <ModalContent>
@@ -301,8 +310,8 @@ function Checkout(){
         }, [])
 
     return(<>
-        <IconButton icon={<PiCurrencyCircleDollar></PiCurrencyCircleDollar>} onClick={onOpen} position={'relative'} left={'20pc'} bg={'transparent'} color={'white'}></IconButton>
-        <Text position={'relative'} left={'25pc'} top={'-1.8pc'}> "Power in exclusivness "</Text>
+        <IconButton icon={<PiCurrencyCircleDollar></PiCurrencyCircleDollar>} onClick={onOpen} position={'relative'} left={'20pc'} bg={'transparent'} color={'yellow.600'}></IconButton>
+        <Text position={'relative'} left={'5pc'} top={'-1.8pc'}> "Power in exclusivness "</Text>
         <Modal isOpen={isOpen} onClose={onClose} size={'full'}>
             <ModalOverlay></ModalOverlay>
             <ModalContent>

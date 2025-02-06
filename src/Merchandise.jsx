@@ -2519,10 +2519,10 @@ function Deals() {
         <IconButton icon={<BiCrown></BiCrown>} variant={'none'} onClick={onOpen} sx={{color: 'teal', bg: 'white', position: 'relative', top: '-5pc', left: '38pc'}}></IconButton>
             <Drawer size={'md'} isOpen={isOpen} placement='right' initialFocusRef={inital} onClose={onClose}>
                 <DrawerOverlay></DrawerOverlay>
-                <DrawerContent>
+                <DrawerContent overflow={'hidden'}>
                     <DrawerHeader> Seek Prenium Luxury Spaces </DrawerHeader>
                     <DrawerCloseButton></DrawerCloseButton>
-                    <DrawerBody>
+                    <DrawerBody overflowY={'hidden'}>
                         <Divider></Divider>
                         <Tag sx={{color: 'teal', position: 'relative', top: '3pc', left: '8pc'}}> Level 1 🥇 </Tag>
                         <Box sx={{position: 'relative', top: '10pc', width: '20pc', left: '2pc'}}>
@@ -2532,11 +2532,11 @@ function Deals() {
                             <Center height='300px'>
                                 <Divider orientation='vertical' ></Divider>
                             </Center>
-                            <Box position={'relative'} top={'-11pc'} width={'10.5pc'}>
+                            <Box position={'relative'} top={'-12pc'} width={'10.5pc'}>
                                 <Box position={'relative'} top={'-5pc'} left={'3pc'}> <Futuristic_Deals></Futuristic_Deals> </Box>
                                 "Invest in futuristic, automated solutions that elevate your prestige and redefine efficiency for a successful future."
                             </Box>
-                            <Box position={'relative'} top={'-22.5pc'} width={'10.5pc'} left={'12pc'}>
+                            <Box position={'relative'} top={'-23.5pc'} width={'10.5pc'} left={'12pc'}>
                                 <Box position={'relative'} top={'-5pc'} left={'3pc'}> <GamesDeals></GamesDeals> </Box>
                                 "Invest in high-stakes business deals that promise substantial returns and drive your success to new heights."
                             </Box>
@@ -4055,7 +4055,7 @@ function Spaces() {
             </Tabs>
           </ModalBody>
         </ModalContent>
-      </Modal>
+        </Modal>
     </>)
 }
 
@@ -4076,9 +4076,9 @@ export default function Merchandise () {
                     <Box sx={{position:'relative', top: '3pc', fontSize: 'x-large', color: 'gold', left: '5pc', font: 'bold', fontFamily: 'La Belle Aurore'}}> Aesthetic Luxury Unveile! </Box>
                 </Box>
                 <IconButton onClick={onOpen} icon={<ShoppingCart></ShoppingCart>} sx={{color: 'brown', bg: 'white', position: 'relative', top: '15pc', left: '40pc', font: 'large'}}></IconButton>
-                <Modal onClose={onClose} size={size} isOpen={isOpen}>
+                <Modal closeOnOverlayClick={false} onClose={onClose} size={size} isOpen={isOpen}>
                     <ModalOverlay>
-                        <ModalContent>
+                        <ModalContent overflow={'hidden'}>
                             <ModalHeader> Merchandise  </ModalHeader>
                             <ModalCloseButton></ModalCloseButton>
                             <ModalBody>
