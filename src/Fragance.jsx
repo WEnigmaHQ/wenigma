@@ -18,16 +18,21 @@ import { BsDatabaseFillAdd } from "react-icons/bs";
 
 export default function Fragance(){
 
-    const { isOpen, onToggle } = useDisclosure();
+    const {isOpen, onOpen, onClose} = useDisclosure();
 
     return(<>
-        <IconButton icon={<TbPerfume></TbPerfume>} onClick={onToggle} variant={'none'} sx={{position: 'relative', top: "-461.5pc", left: "30pc", color:"brown", bg: "transparent"}}></IconButton> 
-        <Fade in={isOpen}>
-                    <Box p='40px' color='white' mt='4' bg='green.500' rounded='md' shadow='md' sx={{position: 'relative', top: '-445pc', height: 'auto', borderRadius: '2pc'}}>
+        <IconButton icon={<TbPerfume></TbPerfume>} onClick={onOpen} variant={'none'} sx={{position: 'relative', top: "-9.5pc", left: "20pc", color:"brown", bg: "transparent"}}></IconButton> 
+        <Modal isOpen={isOpen} onClose={onClose} size={'md'} height={'50pc'}>
+            <ModalOverlay></ModalOverlay>
+            <ModalContent>
+                <ModalHeader color={'yellow.600'}> Limited Edition Fragances  </ModalHeader>
+                <ModalCloseButton></ModalCloseButton>
+                <ModalBody>
                         <NewArrivalFragancee></NewArrivalFragancee>
                         <FraganceMarketplace></FraganceMarketplace>
-                    </Box>
-        </Fade>
+                </ModalBody>
+            </ModalContent>
+        </Modal>
     </>)
 }
 
@@ -129,7 +134,7 @@ function NewArrivalFragancee(){
 
     return(<>
         <Text position={'relative'} top={'2pc'} left={'6pc'} > Discover Allure in Every Drop </Text>
-        <IconButton icon={<PiPlusCircle></PiPlusCircle>} onClick={onOpen} bg={'transparent'} position={'relative'} left={'2pc'} top={'0pc'} color={'white'}></IconButton>
+        <IconButton icon={<PiPlusCircle></PiPlusCircle>} onClick={onOpen} bg={'transparent'} position={'relative'} left={'2pc'} top={'0pc'} color={'blue'}></IconButton>
         <Modal isOpen={isOpen} onClose={onClose} size={'lg'}>
         <ModalOverlay />
         <ModalContent>
@@ -256,14 +261,15 @@ function FraganceMarketplace(){
         Discover_Drops();
     }, [count])
     return(<>
-        <IconButton icon={<Shop></Shop>} onClick={onOpen} position={'relative'} left={'20pc'} bg={'transparent'} color={'white'}></IconButton>
-        <Text position={'relative'} left={'25pc'} top={'-1.8pc'}> Discover Drops, Curate Your Collection </Text>
+        <IconButton icon={<Shop></Shop>} onClick={onOpen} position={'relative'} left={'20pc'} bg={'transparent'} top={'1.8pc'} color={'blue'}></IconButton>
+        <Text position={'relative'} left={'5pc'} top={'0pc'}> Discover Drops, Curate Your Collection </Text>
         <Modal isOpen={isOpen} onClose={onClose} size={'full'}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader> Exclusivness Aroma </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
+            {fragance.length >= 1 ? 
             <Card>
                 <CardBody>
                     {fragance.map((drop, index) => ( <Text key={index}> {drop.FraganceName} </Text>))}
@@ -276,6 +282,11 @@ function FraganceMarketplace(){
                     <Membership_Validation name={SEARCHFRAGRANCEQUERY} size={SEARCHFRAGRANCEBOTTLEQUERY}></Membership_Validation>
                 </CardBody>
             </Card>
+            : <Card>
+                <CardBody color={'yellow.600'}>
+                       Fragance's out of stock 
+                </CardBody>
+              </Card>}
           </ModalBody>
         </ModalContent>
       </Modal>

@@ -27,6 +27,7 @@
 
         V0.00a => Services added
         V0.01a => Aura membership added
+        V0.01b => Fix modals, design issues & desktop overflow screen's
 
     
 
